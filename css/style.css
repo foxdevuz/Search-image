@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #0D1117;
+}
+
+form {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+}
+form input {
+  padding: 15px 25px;
+  border-radius: 50px;
+  border: 1px solid #177171;
+  outline: none;
+  background-color: #f0f6fc;
+  width: 380px;
+  height: 80px;
+  font-size: 1rem;
+  color: #8B949E;
+}
+form button {
+  border: none;
+  border-radius: 50%;
+  background-color: #fdfdf1;
+  color: #282828;
+  padding: 10px;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.imgS {
+  width: 33%;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.loading {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #2852E1;
+}
+.loading .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading .loader h4 {
+  font-size: 2rem;
+  color: #f2f2fd;
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
+  display: inline-block;
+}
+.loading .loader .first {
+  animation-name: first;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes first {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
+}
+.loading .loader .second {
+  animation-name: second;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.7s;
+}
+@keyframes second {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
+}
+.loading .loader .third {
+  animation-name: third;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+@keyframes third {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  0% {
+    transform: translateY(0px);
+  }
+}
+
+.showLoader {
+  display: block;
+}
+
+.overflowH {
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */
