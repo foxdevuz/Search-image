@@ -2,6 +2,7 @@
 let loading = document.querySelector(".loading")
 let container = document.querySelector('.container');
 let body = document.querySelector("body")
+let svgLIKE = document.getElementsByClassName("like")
 // Functions
 document.getElementsByTagName('button')[0].onclick = () => {
     loading.classList.add("showLoader")
@@ -19,6 +20,7 @@ document.getElementsByTagName('button')[0].onclick = () => {
         let data_s = res['results'];
         let len = data_s.length;
         let i = 0;
+        
         while (len){
           // Create img for container
           let img = document.createElement('img');
@@ -31,8 +33,19 @@ document.getElementsByTagName('button')[0].onclick = () => {
           let downLoadLink = `${data_s[i].urls.full}.jpg`
           a.href= ""
           a.download = downLoadLink
+          // Create like 
+          // <i class="fa-solid fa-heart"></i>
+          let like= document.createElement("i")
+          like.className += " fa-solid"
+          like.className += " fa-heart"
+          like.className += " like"
+
+
+    
           // Add new tags in container 
           container.append(img); 
+          container.append(like)
+          console.log(like);
           // container.appendChild(a)
           // Checking result
           console.log(a);
@@ -41,6 +54,29 @@ document.getElementsByTagName('button')[0].onclick = () => {
           --len;
           ++i;
         }  
+        let img00 = document.querySelectorAll(".imgS")
+            for (let i = 0; i < img00.length; i++) {
+              img00[i].addEventListener("mouseover", ()=> {
+               svgLIKE[i].classList.add("like__hover")
+               img00[i].classList.add("img__hover")
+              })
+              img00[i].addEventListener("mouseleave", ()=> {
+                svgLIKE[i].classList.remove("like__hover")
+                img00[i].classList.remove("img__hover")
+               })
+              img00[i].addEventListener('click', function () {
+                svgLIKE[i].classList.toggle('liked');
+              })
+              svgLIKE[i].addEventListener("click", ()=>{
+                svgLIKE[i].classList.toggle('liked');
+              })
+              svgLIKE[i].addEventListener("mouseover", ()=>{
+                svgLIKE[i].classList.toggle('like__hover');
+              })
+              svgLIKE[i].addEventListener("mouseleave", ()=> {
+                svgLIKE[i].classList.remove("like__hover")
+               })
+         }
         // Hide loading
         if (i == 10) {
           body.classList.remove("overflowH")

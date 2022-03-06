@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    transition: all 1.5s;
 }
 body {
     width: 100%;
@@ -18,7 +19,7 @@ body {
 
 // Image
 form {
-    position: fixed;
+    position: absolute;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -30%);
@@ -143,4 +144,35 @@ form {
 }
 .overflowH {
     overflow: hidden;
+}
+.imgS {
+    // z-index: 99;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.imgS:hover {
+    box-shadow: 0 0 15px #fdfcee;
+}
+.liked {
+    color: red !important;
+    transition: all 0.8s;
+    z-index: 1;
+}
+.like {
+    transition: all 0.8s;
+    color: #f2f2fd;
+    font: {
+        size: 2rem;
+    }
+    transform: translate(-400%, 680%);
+    z-index: -1;
+}
+.like__hover {
+    transform: translate(-400%, 680%);
+    z-index: 1;
+    font-size: 2rem !important;
+}
+.img__hover {
+    transition: all 0.5s;
+    filter: contrast(0.4);
 }
